@@ -57,6 +57,9 @@ class ImageCompare {
 			case 'image/jpeg':
 				$return[] = 'jpg';
 				return $return;
+			case 'image/webp':
+				$return[] = 'webp';
+				return $return;	
 			case 'image/png':
 				$return[] = 'png';
 				return $return;
@@ -77,6 +80,8 @@ class ImageCompare {
       
 		if ($mime[2] == 'jpg') {
 			return imagecreatefromjpeg ($path);
+		} else if ($mime[2] == 'webp') {
+			return imagecreatefromwebp ($path);
 		} else if ($mime[2] == 'png') {
 			return imagecreatefrompng ($path);
 		} else {
